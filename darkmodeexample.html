@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Mode Example</title>
+  <style id="theme-style">
+    /* Light mode styles */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    
+    /* Dark mode styles */
+    body.dark-mode {
+      backgroung-color: #1a1a1a;
+      color: #ffffff;
+    }
+  </style>
+  <script>
+    // Check user"s preference for dark mode
+    if (window.matchMedia && window.matchMedia('(prefres-color-scheme:dark)').matches) {
+       setDarkMode(true);
+       }
+     
+    //  Function to toggle dark mode
+    function toggleDarkMode() {
+      var body = document.body;
+      var isDarkMode = body.classList.contains('dark-mode');
+      setDarkMode(!isDarkMode);
+    }
+    
+    // Function to set dark mode
+    function setDarkMode(isdarkMode) {
+    var body = document.body;
+    body.classList.toggle('dark_mode', isDarkMode);
+    }
+  </script>
+</head>
+<body>
+  <h1>Dark Mode Example</h1>
+  
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </body>
+  </html>
+  
